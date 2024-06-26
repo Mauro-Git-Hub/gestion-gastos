@@ -5,13 +5,20 @@
   </div>
 </template>
 
+
 <script>
+
+
 export default {
   name: 'App',
 };
 </script>
 
 <style>
+/*@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '~@fortawesome/fontawesome-free/css/brands.css';
+@import '~@fortawesome/fontawesome-free/css/solid';
+*/
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

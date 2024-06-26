@@ -1,6 +1,11 @@
 <template>
   <div class="gasto-list-container">
-    <h2>Lista de gastos</h2>
+    <!-- <h2>Lista de gastos</h2> -->
+  
+  <font-awesome-icon icon="fa-solid fa-user-secret" />
+
+    
+
     <ul>
       <li v-for="gasto in gastos" :key="gasto.id" class="gasto-item">
         <div v-if="editandoGastoID === gasto.id" class="edit-form">
@@ -71,6 +76,11 @@
 </template>
 
 <script>
+
+
+
+
+
 import { ref, onValue, remove, update } from 'firebase/database';
 import { database, auth } from '../firebase';
 
@@ -142,8 +152,20 @@ export default {
 </script>
 
 <style scoped>
+@import '@fortawesome/fontawesome-svg-core/styles.css';
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
 .gasto-list-container {
   font-family: 'Arial', sans-serif;
+  flex-grow: 1;
+  flex-basis: 50%;
 }
 
 .gasto-list-container h2 {
@@ -158,6 +180,7 @@ export default {
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
+  list-style-type: none
 }
 
 .edit-form,

@@ -91,6 +91,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
+  flex-grow: 1;
 }
 
 .gasto-form-box {
@@ -135,15 +136,23 @@ select.form-control {
   width: 100%;
   padding: 10px;
   font-size: 1rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+box-shadow: 0px 0px 0px 2px #9acc85;
+	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	background-color:#74ad5a;
+	border-radius:10px;
+	border:1px solid #3b6e22;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #92b879;
 }
 
 .btn:hover {
-  background-color: #0056b3;
+ 	background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+	background-color:#7cb661;
 }
 </style>

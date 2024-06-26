@@ -2,9 +2,14 @@
   <div>
     <!-- Navbar -->
     <nav class="navbar">
+      <div class="logo">
+          <img src="../assets/logo-gasto.png" alt="logo-gasto" />
+      </div>
       <div class="navbar-content">
-        <span class="user-email">{{ userEmail }}</span>
-        <button @click="cerrarSesion" class="btn btn-logout">
+        
+           <h3 class="user-email">{{ userEmail }}</h3>
+      
+           <button @click="cerrarSesion" class="btn btn-logout">
           Cerrar Sesión
         </button>
       </div>
@@ -13,8 +18,11 @@
     <!-- Contenido del Dashboard -->
     <div class="dashboard-content">
       <h2>Lista de Gastos</h2>
-      <gastos-list></gastos-list>
-      <gastos-form></gastos-form>
+      <div class="dashboard-content-element">
+        <gastos-list></gastos-list>
+        <gastos-form></gastos-form>
+
+      </div>
     </div>
   </div>
 </template>
@@ -65,13 +73,35 @@ export default {
 
 <style scoped>
 /* Estilos para el Navbar */
-.navbar {
-  background-color: #007bff;
-  padding: 10px 0;
+*{
+  box-sizing: border-box;
 }
 
+.navbar {
+  background-color: #057645;
+  padding: 10px 0;
+  display: flex;
+  max-height: 80px;
+}
+.logo {
+  width: 10%;
+  max-width: 4rem;
+  height: 100%;
+  background-color:white ;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  }
+.logo img{
+  object-fit: cover;
+  width:100%;
+  color: #f6eeee;
+  height:100%;
+  max-height: 47px;
+  max-width: 35px;
+
+}
 .navbar-content {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -79,6 +109,8 @@ export default {
   padding: 0 20px;
   color: #fff;
 }
+
+
 
 .user-email {
   font-weight: bold;
@@ -112,6 +144,14 @@ export default {
   background-color: #f0f0f0;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+.dashboard-content-element {
+display: flex;
+justify-content: space-around;
+align-items: flex-start;
+padding: 20
+5px;
 }
 
 .dashboard-content h2 {
