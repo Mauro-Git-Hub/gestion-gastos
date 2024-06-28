@@ -5,6 +5,7 @@ import Dashboard from '@/components/Dashboard.vue';
 import Carga from '@/components/Carga.vue';
 import ListaCategoria from '@/components/ListaCategoria.vue';
 import ListaFecha from '@/components/ListaFecha.vue';
+import NotFound from '@/components/NotFound.vue';
 import { auth } from '@/firebase.js';
 
 Vue.use(Router);
