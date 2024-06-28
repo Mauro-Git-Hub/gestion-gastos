@@ -2,25 +2,35 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Auth from '@/components/Auth.vue';
 import Dashboard from '@/components/Dashboard.vue';
+import Carga from '@/components/Carga.vue';
+import ListaCategoria from '@/components/ListaCategoria.vue';
+import ListaFecha from '@/components/ListaFecha.vue';
 import { auth } from '@/firebase.js';
 
 Vue.use(Router);
 
-const rutas = [
+const routes = [
   { path: '/', component: Auth },
   { path: '/dashboard', component: Dashboard, meta: { requiresAuth: true } },
+  { path: '/carga', component: Carga, meta: { requiresAuth: true } },
+  {
+    path: '/categoria',
+    component: ListaCategoria,
+    meta: { requiresAuth: true },
+  },
+  { path: '/fecha', component: ListaFecha, meta: { requiresAuth: true } },
 ];
 
 const router = new Router({
-  routes: rutas,
+  routes,
   mode: 'history',
 });
 
 router.beforeEach((to, from, next) => {
-  const usuario = auth.currentUser;
+  const user = auth.currentUser;
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
 
-  if (requiresAuth && !usuario) {
+  if (requiresAuth && !user) {
     next('/');
   } else {
     next();

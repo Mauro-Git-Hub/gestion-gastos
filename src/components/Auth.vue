@@ -2,7 +2,9 @@
   <div class="auth-container">
     <div class="auth-box">
       <!-- Formulario Iniciar Sesión -->
-      <h2 class="auth-title">{{ estaRegistrado ? 'Login' : 'Register' }}</h2>
+      <h2 class="auth-title">
+        {{ estaRegistrado ? 'Inicia sesión' : 'Regístrate' }}
+      </h2>
       <form @submit.prevent="estaRegistrado ? login() : registrar()">
         <div class="form-group">
           <input
@@ -24,7 +26,7 @@
           />
         </div>
         <button type="submit" class="btn btn-primary">
-          {{ estaRegistrado ? 'Login' : 'Register' }}
+          {{ estaRegistrado ? 'Inicia sesión' : 'Regístrate' }}
         </button>
       </form>
       <p class="auth-switch">
@@ -132,11 +134,11 @@ export default {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #057645;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #14ad6b;
 }
 
 .auth-switch {

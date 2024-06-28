@@ -1,11 +1,12 @@
 <template>
   <div class="gasto-list-container">
+    <!-- Encabezado de la tabla -->
+    <div class="table-header">
+      <span class="header-item">Categoría</span>
+      <span class="header-item">Precio</span>
+      <span class="header-item">Acción</span>
+    </div>
     <!-- <h2>Lista de gastos</h2> -->
-  
-  <font-awesome-icon icon="fa-solid fa-user-secret" />
-
-    
-
     <ul>
       <li v-for="gasto in gastos" :key="gasto.id" class="gasto-item">
         <div v-if="editandoGastoID === gasto.id" class="edit-form">
@@ -60,7 +61,7 @@
         <div v-else class="gasto-info">
           <!-- Mostramos info del gasto -->
           <span class="gasto-name">{{ gasto.nombre }}</span>
-          <span class="gasto-amount"> - {{ gasto.cantidad }}</span>
+          <span class="gasto-amount"> $ {{ gasto.cantidad }}</span>
           <div class="button-group">
             <button @click="editarGasto(gasto)" class="btn btn-primary">
               Editar
@@ -76,11 +77,6 @@
 </template>
 
 <script>
-
-
-
-
-
 import { ref, onValue, remove, update } from 'firebase/database';
 import { database, auth } from '../firebase';
 
@@ -152,15 +148,13 @@ export default {
 </script>
 
 <style scoped>
-@import '@fortawesome/fontawesome-svg-core/styles.css';
-
-*{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
-	border: none;
-	outline: none;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
 .gasto-list-container {
   font-family: 'Arial', sans-serif;
@@ -180,7 +174,7 @@ export default {
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
-  list-style-type: none
+  list-style-type: none;
 }
 
 .edit-form,
@@ -234,12 +228,12 @@ export default {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #45b08b;
   color: #fff;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #8edfc2;
 }
 
 .btn-success {
@@ -261,12 +255,12 @@ export default {
 }
 
 .btn-danger {
-  background-color: #dc3545;
+  background-color: #9a343e;
   color: #fff;
 }
 
 .btn-danger:hover {
-  background-color: #c82333;
+  background-color: #c62b3b;
 }
 
 .gasto-name {
@@ -275,5 +269,17 @@ export default {
 
 .gasto-amount {
   color: #888;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0 60px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 </style>
