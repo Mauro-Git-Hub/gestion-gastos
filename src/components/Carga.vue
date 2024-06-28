@@ -18,12 +18,12 @@
             />
           </div>
           <div class="form-group">
-            <label for="cantidad">Cantidad</label>
+            <label for="cantidad">Importe</label>
             <input
               v-model="cantidad"
               type="number"
               id="cantidad"
-              placeholder="Ingrese cantidad"
+              placeholder="Ingrese importe"
               required
               class="form-control"
             />
