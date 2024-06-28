@@ -19,6 +19,7 @@ const routes = [
     meta: { requiresAuth: true },
   },
   { path: '/fecha', component: ListaFecha, meta: { requiresAuth: true } },
+  { path: '*', component: NotFound }, // Ruta catch-all para manejar rutas no válidas
 ];
 
 const router = new Router({
